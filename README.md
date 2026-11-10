@@ -3,8 +3,7 @@
 My niri + DankMaterialShell (DMS) desktop, backed up as installable dotfiles.
 
 Everything colour-related is generated from the current wallpaper by DMS/matugen:
-niri, DankMaterialShell, Starship, kitty, Ghostty, Neovim, Zed, GTK 3/4, Qt,
-and Zen Browser.
+niri, DankMaterialShell, Starship, kitty, Ghostty, Neovim, Zed, GTK 3/4, and Qt.
 
 ## Install
 
@@ -33,9 +32,9 @@ Useful options:
 ```
 
 The installer copies files into `$HOME`, backs up every replaced file to
-`~/.local/state/dotfiles-backup/<timestamp>`, rewrites hard-coded home paths,
-links `~/.config/gtk-4.0` to the Wallbash GTK theme, and enables userChrome for
-existing Zen Browser profiles.
+`~/.local/state/dotfiles-backup/<timestamp>`, and rewrites hard-coded home paths.
+GTK4 uses a real `~/.config/gtk-4.0` directory with the DMS color import, not a
+third-party theme symlink.
 
 ### Install time
 
@@ -48,31 +47,32 @@ Measured on this machine:
 - `--packages`: ~5-15 minutes depending on network speed, mirror sync, and AUR
   builds
 
-After installing, allow one logout/login and one Zen restart.
+After installing, allow one logout/login.
 
 ## What is included
 
 - niri config and DMS-generated `dms/*.kdl` includes
 - DankMaterialShell settings, custom Tokyo Night theme, plugin lockfile
-- matugen user templates for Starship, Neovim (`firewatch`), Ghostty, Zen
-- kitty, Ghostty, Neovim, Zed, GTK 3, Qt5ct/Qt6ct, fish, Bash
-- Wallbash GTK, adw-gtk3 and WhiteSur-dark icon themes
+- matugen user templates for Starship, Neovim (`firewatch`), and Ghostty
+- kitty, Ghostty, Neovim, Zed, GTK 3/4, Qt5ct/Qt6ct, fish, Bash
+- adw-gtk3 GTK theme, DMS GTK color overlays, WhiteSur icons via `--packages`
 - Wallpapers in `~/Pictures/Wallpapers`
+- No browser is installed or configured by this repo.
 
 ## After installing
 
 1. Log out and back in so niri and DMS reload.
 2. Open the wallpaper picker with `Mod+Y` and pick a wallpaper.
-3. Restart Zen Browser once so `userChrome.css` is loaded.
-4. Reinstall DMS plugins from the Plugins page if needed.
+3. Reinstall DMS plugins from the Plugins page if needed.
 
 Generated files (`dank-*.conf`, `dank-colors.css`, `niri/dms/*.kdl`,
-`dms.lua`, `firewatch.lua`, `dank-userChrome.css`, `dank-zed-theme.json`) are
-refreshed by DMS whenever the wallpaper changes. They are copies, not links, so
-re-run `install.sh` after editing this repo.
+`dms.lua`, `firewatch.lua`, `dank-zed-theme.json`) are refreshed by DMS
+whenever the wallpaper changes. They are copies, not links, so re-run
+`install.sh` after editing this repo.
 
 ## Requirements
 
 - EndeavourOS/Arch with niri, quickshell, dms-shell, matugen
 - kitty, ghostty, fish, starship, qt5ct, qt6ct
-- Zen Browser via Flatpak (optional, for the Zen theme)
+- `whitesur-icon-theme` (installed by `--packages`)
+- No browser is required or installed.

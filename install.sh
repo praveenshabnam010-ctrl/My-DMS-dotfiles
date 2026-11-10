@@ -80,6 +80,18 @@ if [[ "$INSTALL_PACKAGES" -eq 1 ]]; then
   install_packages
 fi
 
+prepare_gtk4() {
+  local dir="$HOME/.config/gtk-4.0"
+  [[ -L "$dir" ]] || return 0
+  if [[ "$DRY_RUN" -eq 1 ]]; then
+    echo "would replace symlink $dir"
+    return 0
+  fi
+  mkdir -p "$BACKUP/.config"
+  cp -a "$dir" "$BACKUP/.config/gtk-4.0"
+  rm -f "$dir"
+}
+
 install_tree() {
   local src rel dest
   while IFS= read -r -d '' src; do
@@ -108,58 +120,8 @@ install_tree() {
   done < <(find "$HOME_SRC" -type f -print0)
 }
 
+prepare_gtk4
 install_tree
-
-setup_gtk4() {
-  local target="$HOME/.local/share/themes/Wallbash-Gtk/gtk-4.0"
-  [[ -d "$target" ]] || return 0
-  if [[ "$DRY_RUN" -eq 1 ]]; then
-    echo "would link $HOME/.config/gtk-4.0 -> $target"
-    return 0
-  fi
-
-  if [[ -L "$HOME/.config/gtk-4.0" ]]; then
-    local current
-    current="$(readlink -f "$HOME/.config/gtk-4.0" || true)"
-    if [[ "$current" == "$target" ]]; then
-      return 0
-    fi
-  fi
-
-  if [[ -e "$HOME/.config/gtk-4.0" || -L "$HOME/.config/gtk-4.0" ]]; then
-    mkdir -p "$BACKUP/.config"
-    cp -a "$HOME/.config/gtk-4.0" "$BACKUP/.config/gtk-4.0"
-    rm -rf "$HOME/.config/gtk-4.0"
-  fi
-  ln -sfn "$target" "$HOME/.config/gtk-4.0"
-}
-
-setup_zen() {
-  local root="$HOME/.var/app/app.zen_browser.zen/.zen"
-  [[ -d "$root" ]] || return 0
-
-  local prefs profile chrome
-  while IFS= read -r -d '' prefs; do
-    profile="$(dirname "$prefs")"
-    chrome="$profile/chrome"
-    if [[ "$DRY_RUN" -eq 1 ]]; then
-      echo "would enable Zen userChrome for $profile"
-      continue
-    fi
-    mkdir -p "$chrome"
-    if [[ -e "$chrome/userChrome.css" ]]; then
-      mkdir -p "$BACKUP/.zen/$(basename "$profile")/chrome"
-      cp -a "$chrome/userChrome.css" "$BACKUP/.zen/$(basename "$profile")/chrome/userChrome.css"
-    fi
-    printf '@import url("../../dank-userChrome.css");\n' > "$chrome/userChrome.css"
-    if ! grep -qF 'toolkit.legacyUserProfileCustomizations.stylesheets' "$profile/user.js" 2>/dev/null; then
-      printf 'user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);\n' >> "$profile/user.js"
-    fi
-  done < <(find "$root" -mindepth 2 -maxdepth 2 -name prefs.js -print0)
-}
-
-setup_gtk4
-setup_zen
 
 if [[ "$DRY_RUN" -eq 1 ]]; then
   echo "Dry run complete."
@@ -175,10 +137,10 @@ Next steps:
   1. Log out and back in so niri/DMS reload the configuration.
   2. Open the wallpaper picker with Mod+Y (or DMS settings with Mod+Comma)
      and choose a wallpaper from ~/Pictures/Wallpapers.
-  3. Restart Zen Browser once so userChrome.css is loaded.
-  4. Reinstall DMS plugins from the Plugins page if you use them.
+  3. Reinstall DMS plugins from the Plugins page if you use them.
 
-Generated theme files (dank-*.conf, dank-colors.css, dms/*.kdl, dms.lua,
-firewatch.lua, dank-userChrome.css, DankMatugen*.colors, dank-zed-theme.json)
-are refreshed by DankMaterialShell whenever the wallpaper changes.
+No browser is installed by this repo. Generated theme files (dank-*.conf,
+dank-colors.css, dms/*.kdl, dms.lua, firewatch.lua, DankMatugen*.colors,
+dank-zed-theme.json) are refreshed by DankMaterialShell whenever the
+wallpaper changes.
 EOF

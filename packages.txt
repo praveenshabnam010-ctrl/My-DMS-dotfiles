@@ -10,14 +10,12 @@ qt5ct
 qt6ct
 neovim
 zed
-btop
-dunst
 xdg-desktop-portal-gtk
 ttf-jetbrains-mono-nerd
 ttf-roboto-flex
 ttf-oxanium
 ttf-material-symbols-variable-git
-papirus-icon-theme
+whitesur-icon-theme
 noto-fonts
 noto-fonts-emoji
 noto-fonts-cjk
