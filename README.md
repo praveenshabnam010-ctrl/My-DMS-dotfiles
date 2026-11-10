@@ -37,6 +37,19 @@ The installer copies files into `$HOME`, backs up every replaced file to
 links `~/.config/gtk-4.0` to the Wallbash GTK theme, and enables userChrome for
 existing Zen Browser profiles.
 
+### Install time
+
+Measured on this machine:
+
+- Clone from GitHub: ~20-25 seconds
+- Config install, no wallpapers: ~20 seconds
+- Config install, with wallpapers: ~20-25 seconds
+- Full one-liner: ~45 seconds
+- `--packages`: ~5-15 minutes depending on network speed, mirror sync, and AUR
+  builds
+
+After installing, allow one logout/login and one Zen restart.
+
 ## What is included
 
 - niri config and DMS-generated `dms/*.kdl` includes
