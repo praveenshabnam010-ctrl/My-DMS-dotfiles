@@ -46,13 +46,6 @@ existing Zen Browser profiles.
 - Wallbash GTK, adw-gtk3 and WhiteSur-dark icon themes
 - Wallpapers in `~/Pictures/Wallpapers`
 
-## What is intentionally excluded
-
-- Tokens, passwords, SSH/GPG keys, browser profiles, shell history, caches
-- Cosmic and Plasma configuration/color schemes
-- DMS plugin source clones (restore them from the DMS Plugins page)
-- Noctalia/iNiR/Hyprland leftovers
-
 ## After installing
 
 1. Log out and back in so niri and DMS reload.
