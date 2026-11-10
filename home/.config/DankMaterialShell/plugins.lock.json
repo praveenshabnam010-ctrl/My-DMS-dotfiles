@@ -1,0 +1,28 @@
+{
+  "lockfileVersion": 1,
+  "plugins": {
+    "dankKDEConnect": {
+      "repo": "https://github.com/AvengeMedia/dms-plugins",
+      "path": "DankKDEConnect",
+      "commit": "a8a508bc371e7c3f2c7862d8840b88cf5c63978f"
+    },
+    "dankLauncherKeys": {
+      "repo": "https://github.com/AvengeMedia/dms-plugins",
+      "path": "DankLauncherKeys",
+      "commit": "a8a508bc371e7c3f2c7862d8840b88cf5c63978f"
+    },
+    "materialPlayer": {
+      "repo": "https://github.com/notsopreety/materialPlayer",
+      "commit": "0305afcd246e91c19cc03b44dc4f354ab78621c3"
+    },
+    "mediaPlayer": {
+      "repo": "https://github.com/arrifat346afs/mediaPlayer",
+      "commit": "56ec160ed3fe32ad55b920ff462727d918b6eb51"
+    },
+    "quickCapture": {
+      "repo": "https://github.com/hthienloc/dms-plugins",
+      "path": "quickCapture",
+      "commit": "4344da6e8a65dddf973eda684aa0fdaf3939e78b"
+    }
+  }
+}

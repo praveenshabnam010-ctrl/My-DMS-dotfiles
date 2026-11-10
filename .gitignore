@@ -1,0 +1,4 @@
+*.backup.*
+*.dms-backup
+*.bak
+.DS_Store
