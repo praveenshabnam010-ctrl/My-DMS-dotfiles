@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO_URL="https://github.com/praveenshabnam010-ctrl/My-DMS-dotfiles.git"
+REPO_URL="https://github.com/reyanjawed010-ctrl/My-DMS-dotfiles.git"
 DEFAULT_CLONE="${XDG_DATA_HOME:-$HOME/.local/share}/My-DMS-dotfiles"
 
 SELF="${BASH_SOURCE[0]:-}"
