@@ -2,9 +2,9 @@
 
 My niri + DankMaterialShell (DMS) desktop, backed up as installable dotfiles.
 
-![Desktop screenshot 1](home/Pictures/Screenshots/screenshot_2026-10-28_20-06-34.png)
+![Desktop screenshot 1](home/Pictures/Screenshots/screenshot_2026-11-13_19-09-22.png)
 
-![Desktop screenshot 2](home/Pictures/Screenshots/screenshot_2026-10-20_21-09-15.png)
+![Desktop screenshot 2](home/Pictures/Screenshots/screenshot_2026-11-13_19-10-51.png)
 
 Everything colour-related is generated from the current wallpaper by DMS/matugen:
 niri, DankMaterialShell, Starship, kitty, Ghostty, Neovim, Zed, GTK 3/4, and Qt.
