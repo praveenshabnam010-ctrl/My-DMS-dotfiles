@@ -81,3 +81,10 @@ whenever the wallpaper changes. They are copies, not links, so re-run
 - kitty, ghostty, fish, starship, qt5ct, qt6ct
 - `whitesur-icon-theme` (installed by `--packages`)
 - No browser is required or installed.
+
+## Credits
+
+This setup is built around [DankMaterialShell (DMS)](https://github.com/AvengeMedia/DankMaterialShell) —
+a Quickshell & Go desktop shell for Wayland. The bar, launcher, dashboard,
+and wallpaper-generated theming shown above are all DMS, configured with
+my custom settings.
