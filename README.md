@@ -2,20 +2,24 @@
 
 My niri + DankMaterialShell (DMS) desktop, backed up as installable dotfiles.
 
+![Desktop screenshot 1](home/Pictures/Screenshots/screenshot_2026-10-28_20-06-34.png)
+
+![Desktop screenshot 2](home/Pictures/Screenshots/screenshot_2026-10-20_21-09-15.png)
+
 Everything colour-related is generated from the current wallpaper by DMS/matugen:
 niri, DankMaterialShell, Starship, kitty, Ghostty, Neovim, Zed, GTK 3/4, and Qt.
 
 ## Install
 
 ```bash
-git clone https://github.com/praveenshabnam010-ctrl/My-DMS-dotfiles.git ~/My-DMS-dotfiles
+git clone https://github.com/reyanjawed010-ctrl/My-DMS-dotfiles.git ~/My-DMS-dotfiles
 ~/My-DMS-dotfiles/install.sh
 ```
 
 Or run the installer directly:
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/praveenshabnam010-ctrl/My-DMS-dotfiles/main/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/reyanjawed010-ctrl/My-DMS-dotfiles/main/install.sh)"
 ```
 
 Install the package set first (EndeavourOS/Arch, uses `yay`/`paru`/`pacman`):
@@ -57,6 +61,7 @@ After installing, allow one logout/login.
 - kitty, Ghostty, Neovim, Zed, GTK 3/4, Qt5ct/Qt6ct, fish, Bash
 - adw-gtk3 GTK theme, DMS GTK color overlays, WhiteSur icons via `--packages`
 - Wallpapers in `~/Pictures/Wallpapers`
+- Desktop screenshots in `home/Pictures/Screenshots`
 - No browser is installed or configured by this repo.
 
 ## After installing
